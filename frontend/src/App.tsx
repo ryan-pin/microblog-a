@@ -1,14 +1,17 @@
-import Header from "./components/header/header"
-import Login from "./components/header/login/login"
+import Cadastro from "./pages/cadastro"
+import { Route, BrowserRouter, Routes } from "react-router-dom";
+import LoginPage from "./pages/login";
 
 
 function App() {
 
   return (
-    <>
-      <Header />
-      <Login />
-    </>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Cadastro />} />
+        <Route path="/login" element={<LoginPage />} />
+      </Routes>
+    </BrowserRouter>
   )
 }
 
