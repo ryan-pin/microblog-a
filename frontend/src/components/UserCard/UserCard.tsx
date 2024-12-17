@@ -45,7 +45,9 @@ function UserCard(){
             </div>
           </div>
         </div>
+        <div className="mt-3">
         <button className="br-button primary">Criar publicação</button>
+        </div>
     </div>
   </div>
 </div>

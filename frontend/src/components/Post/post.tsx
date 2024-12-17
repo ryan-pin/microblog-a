@@ -6,14 +6,14 @@ function Post() {
             <div className="d-flex">
               <span className="br-avatar mt-1" title="Fulano da Silva">
                 <span className="content">
-                  <img src="https://picsum.photos/id/823/400" />
+                  <img src="https://imgcdn.sigstick.com/tK44c3I5jEXR73rCcqHV/cover-1.thumb256.png" />
                 </span>
               </span>
               <div className="ml-3">
                 <div className="text-weight-semi-bold text-up-02">
-                  Maria Amorim
+                  Jadson Douglas
                 </div>
-                <div>UX Designer</div>
+                <div>gato</div>
               </div>
               <div className="ml-auto">
                 <button
@@ -27,7 +27,7 @@ function Post() {
             </div>
           </div>
           <div className="card-content">
-            <img src="https://picsum.photos/id/0/500" alt="Imagem de exemplo" />
+            <img src="https://pt.quizur.com/_image?href=https%3A%2F%2Fimg.quizur.com%2Ff%2Fimg651f9f755ee9f2.22660263.jpg%3FlastEdited%3D1696571256&w=600&h=600&f=webp" alt="gato" />
             <p>
               Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tempore
               perferendis nam porro atque ex at, numquam non optio ab eveniet
