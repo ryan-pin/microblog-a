@@ -1,7 +1,7 @@
 function UserCard(){
     return (
 
-<div className="col-sm-6 col-md-4 col-lg-3 ml-3">
+<div className="col-sm-6 col-md-4 col-lg-3 ml-5">
   <div className="br-card">
     <div className="card-header">
       <div className="d-flex"><span className="br-avatar mt-1" title="Fulano da Silva"><span className="content"><img src="https://picsum.photos/id/823/400"/></span></span>

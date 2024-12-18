@@ -9,7 +9,7 @@ function Login() {
                 <input
                   id="input-name"
                   type="text"
-                  placeholder="Digite seu nome"
+                  placeholder="Digite seu nome de usuario"
                 />
               </div>
   

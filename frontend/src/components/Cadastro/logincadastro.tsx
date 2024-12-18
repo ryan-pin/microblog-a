@@ -1,4 +1,17 @@
+import { useRef } from "react";
+import axiosInstance from "../../services/axiosinstance";
+
 function LoginCadastro() {
+
+  const inputName = useRef()
+  const inputUserName = useRef()
+  const inputPassword = useRef()
+
+  async function createUser() {
+    await axiosInstance.post('/cadastrar')
+    
+  }
+
   return (
       <div className="br-card">
         <div className="card-content">
@@ -10,6 +23,17 @@ function LoginCadastro() {
                 id="input-name"
                 type="text"
                 placeholder="Digite seu nome"
+                ref={inputName}
+              />
+            </div>
+
+            <div className="br-input input-button">
+              <label htmlFor="input-text">Nome</label>
+              <input
+                id="input-name"
+                type="text"
+                placeholder="Digite seu nome de usuario"
+                ref={inputUserName}
               />
             </div>
 
@@ -19,6 +43,7 @@ function LoginCadastro() {
                 id="input-password"
                 type="password"
                 placeholder="Digite sua senha"
+                ref={inputPassword}
               />
               <button
                 className="br-button"
@@ -51,7 +76,7 @@ function LoginCadastro() {
             </div>
           </div>
           <div className="d-flex justify-content-end">
-            <button className="br-button primary m-1">criar conta</button>
+            <button className="br-button primary m-1" onClick={createUser}>criar conta</button>
           </div>
         </div>
       </div>
