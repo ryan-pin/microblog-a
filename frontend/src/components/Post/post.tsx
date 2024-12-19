@@ -7,7 +7,7 @@ export interface PostType {
 function Post({ name, house, image }: PostType) {
 
   return (
-      <div className="col-sm-3">
+      <div className="col-sm-6 col-md-4 col-lg-3 mt-6">
         <div className="br-card">
           <div className="card-header">
             <div className="d-flex">

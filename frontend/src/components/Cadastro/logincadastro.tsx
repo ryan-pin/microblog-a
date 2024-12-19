@@ -9,7 +9,6 @@ function LoginCadastro() {
 
   async function createUser() {
     await axiosInstance.post('/cadastrar')
-    
   }
 
   return (
