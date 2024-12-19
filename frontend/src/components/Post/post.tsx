@@ -1,19 +1,26 @@
-function Post() {
+export interface PostType {
+  name: string;
+  house: string;
+  image: string;
+}
+
+function Post({ name, house, image }: PostType) {
+
   return (
-      <div className="col-sm-6 col-md-4 ">
+      <div className="col-sm-3">
         <div className="br-card">
           <div className="card-header">
             <div className="d-flex">
               <span className="br-avatar mt-1" title="Fulano da Silva">
                 <span className="content">
-                  <img src="https://imgcdn.sigstick.com/tK44c3I5jEXR73rCcqHV/cover-1.thumb256.png" />
+                  <img src={image} />
                 </span>
               </span>
               <div className="ml-3">
                 <div className="text-weight-semi-bold text-up-02">
-                  Jadson Douglas
+                  {name}
                 </div>
-                <div>gato</div>
+                <div>{house}</div>
               </div>
               <div className="ml-auto">
                 <button
