@@ -8,7 +8,11 @@ function LoginCadastro() {
   const inputPassword = useRef()
 
   async function createUser() {
-    await axiosInstance.post('/cadastrar')
+    await axiosInstance.post('/cadastrar/', {
+      username: inputUserName.current.value,
+      nome: inputName.current.value,
+      senha: inputPassword.current.value
+    })
   }
 
   return (
@@ -27,7 +31,7 @@ function LoginCadastro() {
             </div>
 
             <div className="br-input input-button">
-              <label htmlFor="input-text">Nome</label>
+              <label htmlFor="input-text">Nome de usuario</label>
               <input
                 id="input-name"
                 type="text"
