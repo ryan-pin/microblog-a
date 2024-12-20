@@ -1,12 +1,13 @@
-import axios from "axios";
 import { useEffect, useState } from "react";
 import Header from "../components/header/header";
 import Post, { PostType } from "../components/Post/post";
 import UserCard from "../components/UserCard/UserCard";
 import CharactersPost from "../services/CharactersPost";
+import ModalPost from "../components/Modal/modalPost";
 
 function Feed() {
     const [posts, setPosts] = useState<PostType[]>([]);
+    
 
     function getPosts(){
         CharactersPost.listarPersonagens().then((res) => {
@@ -20,6 +21,7 @@ function Feed() {
     return(
         <div>
             <Header />
+            <ModalPost></ModalPost>
             <div className="mt-5 d-flex">
                 <UserCard />
                 <div className="br-card d-flex align-items-center flex-column ">

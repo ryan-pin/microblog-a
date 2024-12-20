@@ -1,3 +1,7 @@
+import { Link } from "react-router-dom";
+
+
+
 function Header() {
   return (
     // <header className="br-header">
@@ -38,7 +42,7 @@ function Header() {
                   data-trigger="login"
                 >
                   <i className="fas fa-user" aria-hidden="true"></i>
-                  <span className="d-sm-inline">Entrar</span>
+                  <Link to ="/login"> <span className="d-sm-inline">Entrar</span> </Link> 
                 </button>
               </div>
             </div>
