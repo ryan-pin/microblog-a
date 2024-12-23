@@ -21,7 +21,7 @@ function Feed() {
     return(
         <div>
             <Header />
-            <ModalPost></ModalPost>
+
             <div className="mt-5 d-flex">
                 <UserCard />
                 <div className="br-card d-flex align-items-center flex-column ">
