@@ -3,7 +3,7 @@ import Header from "../components/header/header";
 import Post, { PostType } from "../components/Post/post";
 import UserCard from "../components/UserCard/UserCard";
 import CharactersPost from "../services/CharactersPost";
-import ModalPost from "../components/Modal/modalPost";
+
 
 function Feed() {
     const [posts, setPosts] = useState<PostType[]>([]);

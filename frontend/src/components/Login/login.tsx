@@ -1,8 +1,11 @@
 import { useRef, useState } from "react";
 import axiosInstance from "../../services/axiosinstance";
+import { useNavigate } from "react-router-dom";
 
 function Login() {
   const userRef = useRef();
+
+  const navigate = useNavigate();
 
   const [user, setUser] = useState("");
   const [pswd, setPswd] = useState("");
@@ -10,7 +13,14 @@ function Login() {
 
   // agora funciona :)
   async function LoginUser() {
-    await axiosInstance.post("/login/",{ username: user, password: pswd });
+    try{
+      await axiosInstance.post("/login/",{ username: user, password: pswd });
+      navigate("/feed");
+    }
+    catch (error) {
+      setError("Usuário ou senha incorretos.");
+      console.error(error);
+    }
   }
 
   return (

@@ -1,5 +1,6 @@
 import { useRef } from "react";
 import axiosInstance from "../../services/axiosinstance";
+import { useNavigate } from "react-router-dom";
 
 function LoginCadastro() {
 
@@ -7,12 +8,21 @@ function LoginCadastro() {
   const inputUserName = useRef()
   const inputPassword = useRef()
 
+  const navigate = useNavigate();
+
   async function createUser() {
-    await axiosInstance.post('/cadastrar/', {
-      username: inputUserName.current.value,
-      nome: inputName.current.value,
-      senha: inputPassword.current.value
-    })
+    try{
+      await axiosInstance.post('/cadastrar/', {
+        username: inputUserName.current.value,
+        nome: inputName.current.value,
+        senha: inputPassword.current.value
+      })
+      navigate("/login");
+    }
+    catch (error) {
+      alert("Erro ao registrar usuário.");
+      console.error(error);
+    }
   }
 
   return (
