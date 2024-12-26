@@ -59,8 +59,10 @@ function Post({ name, house, image }: PostType) {
               </div>
             </div>
           </div>
-          <div className="card-content">
+          <div className="card-content"> 
+            {/* imagem do post */}
             <img src="https://pt.quizur.com/_image?href=https%3A%2F%2Fimg.quizur.com%2Ff%2Fimg651f9f755ee9f2.22660263.jpg%3FlastEdited%3D1696571256&w=600&h=600&f=webp" alt="gato" />
+            {/* conteudo do post */}
             <p>
               Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tempore
               perferendis nam porro atque ex at, numquam non optio ab eveniet

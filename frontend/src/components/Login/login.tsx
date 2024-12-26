@@ -1,6 +1,6 @@
 import { useRef, useState } from "react";
-import axiosInstance from "../../services/axiosinstance";
 import { useNavigate } from "react-router-dom";
+import axiosInstance from "../../services/axiosinstance";
 
 function Login() {
   const userRef = useRef<HTMLInputElement | null>(null);
@@ -26,8 +26,9 @@ function Login() {
 
   return (
     <div className="br-card">
+      
       <div className="card-content">
-        <div className="text-weight-semi-bold text-up-02">Crie sua conta</div>
+        <div className="text-weight-semi-bold text-up-02">Entrar na sua conta</div>
         <div className="p-3">
           <div className="br-input input-button">
             <label htmlFor="input-text">Nome de usuario</label>
@@ -68,6 +69,7 @@ function Login() {
             Entrar
           </button>
         </div>
+        {error && <div className="mb-3"><span className="feedback danger" role="alert"><i className="fas fa-times-circle" aria-hidden="true"></i>{error}.</span></div>}
       </div>
     </div>
   );
