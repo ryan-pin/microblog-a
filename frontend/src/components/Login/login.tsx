@@ -8,9 +8,9 @@ function Login() {
   const [pswd, setPswd] = useState("");
 
 
-  // nao funciona 
+  // agora funciona :)
   async function LoginUser() {
-    await axiosInstance.post("/login/",{ username: user, senha: pswd });
+    await axiosInstance.post("/login/",{ username: user, password: pswd });
   }
 
   return (

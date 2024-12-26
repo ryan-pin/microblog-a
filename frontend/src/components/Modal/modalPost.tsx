@@ -13,7 +13,7 @@ function ModalPost( {isOpen, onClose} : ModalProps) {
     const [descricao, setDescricao] = useState("");
 
     async function CreatePost() {
-      await axiosInstance.post("/login/",{ titulo: titulo, descricao: descricao });
+      await axiosInstance.post("/login/",{ titulo: titulo, descricao: descricao, imagem: null  });
     }
 
   if (isOpen) {
@@ -40,6 +40,7 @@ function ModalPost( {isOpen, onClose} : ModalProps) {
               <i className="fas fa-times" aria-hidden="true"></i>
             </button>
           </div>
+          <form action="">
           <div className="br-modal-body">
               <div className="br-input">
                 <label htmlFor="input-default">Titulo </label>
@@ -58,8 +59,9 @@ function ModalPost( {isOpen, onClose} : ModalProps) {
                 placeholder="Escreva aqui a descrição"
                 onChange={(e) => setDescricao(e.target.value)}
               ></textarea>
-            </div>
+            </div>   
           </div>
+          </form>
           <div className="br-modal-footer justify-content-end">
             <button className="br-button secondary" type="button" onClick={onClose}>
               Cancelar

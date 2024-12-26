@@ -4,6 +4,32 @@ export interface PostType {
   image: string;
 }
 
+// {
+//   "id": 0,
+//   "titulo": "string",
+//   "imagem": "string",
+//   "descricao": "string",
+//   "autor": {
+//     "id": 0,
+//     "username": "string",
+//     "nome": "string"
+//   },
+//   "publicado_em": "string"
+// }
+
+// Comentario 
+// {
+//   "id": 0,
+//   "autor": {
+//     "id": 0,
+//     "username": "GC.otVIcOJwaGkKO@oN5xyFuZKv-8sFDWm6KbMFUqjmbv0frRv_5DHw_lz_ICpe1fT20LYlQq9API0",
+//     "nome": "string"
+//   },
+//   "publicacao": 0,
+//   "mensagem": "string",
+//   "publicado_em": "string"
+// }
+
 function Post({ name, house, image }: PostType) {
 
   return (
