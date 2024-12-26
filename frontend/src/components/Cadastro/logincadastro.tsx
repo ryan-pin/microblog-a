@@ -4,9 +4,9 @@ import { useNavigate } from "react-router-dom";
 
 function LoginCadastro() {
 
-  const inputName = useRef()
-  const inputUserName = useRef()
-  const inputPassword = useRef()
+  const inputName = useRef<HTMLInputElement>(null)
+  const inputUserName = useRef<HTMLInputElement>(null)
+  const inputPassword = useRef<HTMLInputElement>(null)
 
   const navigate = useNavigate();
 

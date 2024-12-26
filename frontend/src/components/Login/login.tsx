@@ -3,12 +3,13 @@ import axiosInstance from "../../services/axiosinstance";
 import { useNavigate } from "react-router-dom";
 
 function Login() {
-  const userRef = useRef();
+  const userRef = useRef<HTMLInputElement | null>(null);
 
   const navigate = useNavigate();
 
   const [user, setUser] = useState("");
   const [pswd, setPswd] = useState("");
+  const [error, setError] = useState("");
 
 
   // agora funciona :)
