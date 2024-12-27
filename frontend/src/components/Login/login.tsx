@@ -16,6 +16,10 @@ function Login() {
   async function LoginUser() {
     try{
       await axiosInstance.post("/login/",{ username: user, password: pswd });
+
+      // const token = Response.data.token;
+      // localStorage.setItem("token", token);
+
       navigate("/feed");
     }
     catch (error) {

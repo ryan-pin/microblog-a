@@ -16,7 +16,6 @@ function ModalPost( {isOpen, onClose} : ModalProps) {
       titulo: "",
       imagem: "",
       descricao: "",
-      autor: { id: 1, username: "User", nome: "João Silva" },
       publicado_em: new Date().toISOString(),
     });
 

@@ -9,6 +9,7 @@ function Feed() {
     const [posts, setPosts] = useState<PostType[]>([]);
     
 
+    
     function getPosts(){
         CharactersPost.listarPersonagens().then((res) => {
             const { data } = res;
