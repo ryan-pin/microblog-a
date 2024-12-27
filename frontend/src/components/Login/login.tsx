@@ -15,10 +15,10 @@ function Login() {
   // agora funciona :)
   async function LoginUser() {
     try{
-      await axiosInstance.post("/login/",{ username: user, password: pswd });
+      const response = await axiosInstance.post("/login/",{ username: user, password: pswd });
 
-      // const token = Response.data.token;
-      // localStorage.setItem("token", token);
+      localStorage.setItem("token", response.data.token);
+
 
       navigate("/feed");
     }
