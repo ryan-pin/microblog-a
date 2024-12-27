@@ -1,9 +1,21 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 
 
 function Header() {
-  return (
+  const isAuthenticated = !!localStorage.getItem("token");
+
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    localStorage.removeItem("token");
+    localStorage.removeItem("user");
+
+    navigate("/login");
+  };
+  
+
+  return isAuthenticated ? (
     // <header className="br-header">
     //   <div className="header-title">Microblog</div>
     //   <div className="header-menu">
@@ -13,6 +25,49 @@ function Header() {
     // </header>
 
     <header className="br-header compact">
+      <div className="container-lg">
+        <div className="header-top">
+          <div className="header-actions">
+            <div className="header-links dropdown">
+              <div className="br-list">
+                <a className="br-item" href="javascript:void(0)">
+                  Feed
+                </a>
+                <a className="br-item" href="javascript:void(0)">
+                  Descobrir
+                </a>
+                <a className="br-item" href="javascript:void(0)">
+                  Amigos
+                </a>
+                <a className="br-item" href="javascript:void(0)">
+                  Perfil
+                </a>
+              </div>
+            </div>
+            <span className="br-divider vertical mx-half mx-sm-1"></span>
+
+            <div className="header-login">
+              <div className="header-sign-in">
+              <button onClick={handleLogout} className="br-button primary">
+              Logout
+            </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="header-bottom">
+          <div className="header-menu">
+            <div className="header-info">
+              <div className="header-title">Microblog</div>
+              <div className="header-subtitle">sua redesocial</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+  ): (
+    <div>
+          <header className="br-header compact">
       <div className="container-lg">
         <div className="header-top">
           <div className="header-actions">
@@ -58,6 +113,7 @@ function Header() {
         </div>
       </div>
     </header>
+    </div>
   );
 }
 

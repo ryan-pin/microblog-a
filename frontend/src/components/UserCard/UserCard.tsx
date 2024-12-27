@@ -1,7 +1,6 @@
 import { useState } from "react";
 import ModalPost from "../Modal/modalPost";
 
-
 function UserCard() {
   const [ModalOpen, setModalOpen] = useState(false);
 
@@ -9,7 +8,7 @@ function UserCard() {
 
   return (
     <>
-      <ModalPost isOpen={ModalOpen} onClose={closeModal}/>
+      <ModalPost isOpen={ModalOpen} onClose={closeModal} />
 
       <div className="col-sm-6 col-md-4 col-lg-3 ml-5">
         <div className="br-card">
@@ -79,5 +78,4 @@ function UserCard() {
     </>
   );
 }
-
 export default UserCard;
