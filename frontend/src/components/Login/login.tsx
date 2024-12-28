@@ -17,7 +17,7 @@ function Login() {
     try{
       const response = await axiosInstance.post("/login/",{ username: user, password: pswd });
 
-      localStorage.setItem("token", response.data.token);
+      localStorage.setItem("token", response.data.access);
 
 
       navigate("/feed");

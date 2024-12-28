@@ -16,7 +16,6 @@ function ModalPost( {isOpen, onClose} : ModalProps) {
       titulo: "",
       imagem: "",
       descricao: "",
-      publicado_em: new Date().toISOString(),
     });
 
     const [error, setError] = useState("");
@@ -26,7 +25,11 @@ function ModalPost( {isOpen, onClose} : ModalProps) {
       e.preventDefault();
   
       try {
-        const response = await axiosInstance.post("/publicacao/", form);
+        const response = await axiosInstance.post("/publicacao/", form,{
+          headers: {
+            "Content-Type": "multipart/form-data", // Certifique-se de que o formato é JSON
+          },
+        });
         console.log("Post enviado com sucesso:", response.data);
       } catch (error) {
         setError("Erro ao enviar o post. Tente novamente.");
@@ -82,7 +85,8 @@ function ModalPost( {isOpen, onClose} : ModalProps) {
                   placeholder="Escreva aqui a descrição"
                   onChange={(e) => setForm({ ...form, descricao: e.target.value })}
                 ></textarea>
-              </div>   
+              </div>
+              {error && <div className="error-message">{error}</div>}   
             </div>
             </form>
             <div className="br-modal-footer justify-content-end">
