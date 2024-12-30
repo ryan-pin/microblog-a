@@ -1,6 +1,12 @@
 import { useState } from "react";
 import ModalPost from "../Modal/modalPost";
 
+// export interface UserType {
+//   username: string;
+//   nome: string;
+// }
+
+// function UserCard({ username, nome }: UserType)
 function UserCard() {
   const [ModalOpen, setModalOpen] = useState(false);
 
@@ -21,9 +27,9 @@ function UserCard() {
               </span>
               <div className="ml-3">
                 <div className="text-weight-semi-bold text-up-02">
-                  Maria Amorim
+                  nome
                 </div>
-                <div>UX Designer</div>
+                <div>username</div>
               </div>
             </div>
           </div>
