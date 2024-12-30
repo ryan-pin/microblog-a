@@ -5,39 +5,47 @@ import UserCard from "../components/UserCard/UserCard";
 import Posts from "../services/ListPost";
 
 function Feed() {
-    const [posts, setPosts] = useState<PostType[]>([]);
-    
+  const [posts, setPosts] = useState<PostType[]>([]);
 
-    
-    // function getPosts(){
-    //     Posts.list().then((res) => {
-    //         const { data } = res;
-    //         setPosts(data);
-    //     })
-    // }
+  // function getPosts(){
+  //     Posts.list().then((res) => {
+  //         const { data } = res;
+  //         setPosts(data);
+  //     })
+  // }
 
-    function getPosts(){
-        Posts.list().then((res) => {
-            setPosts(res)});
-            
-    }
+  function getPosts() {
+    Posts.list().then((res) => {
+      setPosts(res);
+    });
+  }
 
-    useEffect(() => {getPosts()}, [])
+  useEffect(() => {
+    getPosts();
+  }, []);
 
-    return(
-        <div>
-            <Header />
+  return (
+    <div>
+      <Header />
 
-            <div className="mt-5 d-flex">
-                <UserCard  />
-                <div className="br-card d-flex align-items-center flex-column ">
-                    {posts.map((post) => {
-                        return <Post autor={post.autor} titulo={post.titulo} descricao={post.descricao}/>
-                    })}
-                </div>
-            </div>
+      <div className="mt-5 d-flex">
+        <UserCard />
+        <div className="br-card d-flex align-items-center flex-column ">
+          {posts.map((post) => {
+            return (
+              <Post
+                autor={post.autor}
+                titulo={post.titulo}
+                descricao={post.descricao}
+                nome={post.nome}
+                username={post.username}
+              />
+            );
+          })}
         </div>
-    )
+      </div>
+    </div>
+  );
 }
 
 export default Feed;
